@@ -16,15 +16,21 @@ public class AppTest {
      * Rigorous Test :-)
      */
     @Test
-    public void shouldAnswerWithTrue() {
+    public void connect() {
         Map<String, String> env = System.getenv();
-
 
         String host = "imap.gmail.com";
         String user = env.get("GMAIL_USER");
         String password = env.get("GMAIL_PASS");
         String protocol = "imaps";
         int port = 993;
+
+        if (user == null) {
+            System.out.println("missing gmail username environment variable GMAIL_USER");
+        }
+        if(password == null) {
+            System.out.println("missing gmail password environment variable GMAIL_PASS");
+        }
 
         Store store = null;
 

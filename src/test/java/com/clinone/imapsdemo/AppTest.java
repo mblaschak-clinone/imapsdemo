@@ -43,6 +43,7 @@ public class AppTest {
         props.setProperty("mail.imap.user", user);
         props.setProperty("mail.imaps.starttls.enable", "true");
         props.setProperty("mail.imap.ssl.enable", "true");
+        props.setProperty("mail.smtp.ssl.trust", "smtp.gmail.com");
 
         Session session = Session.getInstance(props);
         session.setDebug(true);

@@ -6,7 +6,10 @@ import java.util.Properties;
 
 import javax.mail.*;
 
+import org.junit.Assert;
 import org.junit.Test;
+
+
 
 /**
  * Unit test for simple App.
@@ -64,6 +67,7 @@ public class AppTest {
                 store.connect(host, port, user, password);
             } catch (MessagingException e) {
                 System.out.println("Store connection is failed: " + e.getMessage());
+                Assert.fail();
             }
             System.out.println("imapStore ---" + store);
         }
